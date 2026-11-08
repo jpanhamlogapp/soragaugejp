@@ -6,14 +6,13 @@
 <title>SoraGauge JP — 宇宙天気をひと目で</title>
 <meta name="description" content="SoraGauge JP は NOAA SWPC の宇宙天気(太陽フレア・地磁気・太陽風・黒点・警報)と HF 運用の目安を表示する無料アプリ(iPhone / iPad / Mac)。">
 <style>
-  :root{--bg:#ffffff;--fg:#1b1f24;--muted:#5b6570;--line:#e5e8ec;--accent:#0062cc;--card:#f6f8f9}
-  @media (prefers-color-scheme: dark){:root{--bg:#111418;--fg:#e8ebee;--muted:#9aa4ae;--line:#2a3038;--accent:#64b5ff;--card:#1a1f26}}
+  :root{--bg:#ffffff;--fg:#1e293b;--muted:#64748b;--line:#e2e8f0;--accent:#0e7490;--card:#f8fafc}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Segoe UI",Roboto,sans-serif;line-height:1.75;-webkit-text-size-adjust:100%}
   .wrap{max-width:760px;margin:0 auto;padding:40px 22px 80px}
-  header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:12px}
+  header{border-bottom:2px solid var(--accent);padding-bottom:20px;margin-bottom:12px}
   .brand{display:flex;align-items:center;gap:12px}
-  .dot{width:44px;height:44px;border-radius:10px;flex:0 0 auto;background:linear-gradient(135deg,#f6b73c,#c2410c)}
+  .icon{width:44px;height:44px;border-radius:10px;flex:0 0 auto}
   h1{font-size:1.5rem;margin:0} .sub{color:var(--muted);font-size:.95rem;margin-top:2px}
   h2{font-size:1.05rem;margin:2em 0 .4em;color:var(--accent)}
   p{margin:.5em 0} ul{margin:.4em 0 .8em;padding-left:1.2em} li{margin:.25em 0} a{color:var(--accent)}
@@ -25,7 +24,7 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><div class="dot"></div>
+    <div class="brand"><img class="icon" src="images/icon.png" width="44" height="44" alt="">
       <div><h1>SoraGauge JP</h1><div class="sub">宇宙天気をひと目で — NOAA SWPC のデータで、太陽・地磁気・HF の目安</div></div>
     </div>
   </header>

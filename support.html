@@ -5,14 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SoraGauge JP 取扱説明書 / User Guide</title>
 <style>
-  :root{--bg:#ffffff;--fg:#1b1f24;--muted:#5b6570;--line:#e5e8ec;--accent:#0062cc;--card:#f6f8f9;--sun:#c2410c}
-  @media (prefers-color-scheme: dark){:root{--bg:#111418;--fg:#e8ebee;--muted:#9aa4ae;--line:#2a3038;--accent:#64b5ff;--card:#1a1f26;--sun:#ffb454}}
+  :root{--bg:#ffffff;--fg:#1e293b;--muted:#64748b;--line:#e2e8f0;--accent:#0e7490;--card:#f8fafc}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Segoe UI",Roboto,sans-serif;line-height:1.75;-webkit-text-size-adjust:100%}
   .wrap{max-width:760px;margin:0 auto;padding:40px 22px 80px}
-  header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:12px}
+  header{border-bottom:2px solid var(--accent);padding-bottom:20px;margin-bottom:12px}
   .brand{display:flex;align-items:center;gap:12px}
-  .dot{width:34px;height:34px;border-radius:8px;flex:0 0 auto;background:linear-gradient(135deg,#f6b73c,#c2410c)}
+  .icon{width:44px;height:44px;border-radius:10px;flex:0 0 auto}
   h1{font-size:1.35rem;margin:0} .sub{color:var(--muted);font-size:.9rem;margin-top:2px}
   h2{font-size:1.1rem;margin:2.2em 0 .4em;color:var(--accent)} h3{font-size:1rem;margin:1.6em 0 .3em}
   .lang{color:var(--muted);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-top:2.6em}
@@ -32,7 +31,7 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><div class="dot"></div>
+    <div class="brand"><img class="icon" src="images/icon.png" width="44" height="44" alt="">
       <div><h1>SoraGauge JP</h1><div class="sub">取扱説明書 / User Guide · バージョン 1.0</div></div>
     </div>
     <nav style="margin-top:12px;font-size:.9rem"><a href="support.html">取扱説明書</a><a href="credits.html">出典・クレジット</a><a href="privacy.html">プライバシー</a></nav>
