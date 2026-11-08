@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SoraGauge JP — 宇宙天気をひと目で</title>
+<meta name="description" content="SoraGauge JP は NOAA SWPC の宇宙天気(太陽フレア・地磁気・太陽風・黒点・警報)と HF 運用の目安を表示する無料アプリ(iPhone / iPad / Mac)。">
+<style>
+  :root{--bg:#ffffff;--fg:#1b1f24;--muted:#5b6570;--line:#e5e8ec;--accent:#0062cc;--card:#f6f8f9}
+  @media (prefers-color-scheme: dark){:root{--bg:#111418;--fg:#e8ebee;--muted:#9aa4ae;--line:#2a3038;--accent:#64b5ff;--card:#1a1f26}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Segoe UI",Roboto,sans-serif;line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 22px 80px}
+  header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:12px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .dot{width:44px;height:44px;border-radius:10px;flex:0 0 auto;background:linear-gradient(135deg,#f6b73c,#c2410c)}
+  h1{font-size:1.5rem;margin:0} .sub{color:var(--muted);font-size:.95rem;margin-top:2px}
+  h2{font-size:1.05rem;margin:2em 0 .4em;color:var(--accent)}
+  p{margin:.5em 0} ul{margin:.4em 0 .8em;padding-left:1.2em} li{margin:.25em 0} a{color:var(--accent)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:1em 0}
+  .links a{display:inline-block;margin:6px 10px 0 0;padding:8px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none}
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><div class="dot"></div>
+      <div><h1>SoraGauge JP</h1><div class="sub">宇宙天気をひと目で — NOAA SWPC のデータで、太陽・地磁気・HF の目安</div></div>
+    </div>
+  </header>
+  <div class="card">
+    <p>iPhone・iPad・Mac 向けの無料アプリ。広告・課金・アカウントなし。NOAA Space Weather Prediction Center の公式データ(X線フレア・Kp・太陽風・黒点群・警報)を、ひと目で分かるカードと自作の太陽面の図で表示します。アマチュア無線の HF 運用への影響の目安も。</p>
+  </div>
+  <h2>主な機能</h2>
+  <ul>
+    <li>NOAA スケール(R / S / G)の現在値と予報</li>
+    <li>X線フラックスと太陽フレア(進行中・7 日)、フレアの発生確率</li>
+    <li>Kp 指数(7 日)と 3 日予報、太陽風(速度・密度・Bz・Bt)</li>
+    <li>黒点群(位置・面積・McIntosh・磁場分類)の太陽面の図と一覧、NOAA 黒点数の推移、太陽周期</li>
+    <li>NOAA の警報・注意報・見込み(原文)</li>
+    <li>HF 周波数帯ごとの目安(SoraGauge JP 独自。公式予報とは区別して表示)</li>
+    <li>UTC / JST の表示、端末内キャッシュ、オフライン時は前回の値を表示</li>
+  </ul>
+  <div class="links">
+    <a href="support.html">取扱説明書</a><a href="credits.html">出典・クレジット</a><a href="privacy.html">プライバシーポリシー</a>
+  </div>
+  <p class="sub" style="margin-top:1.5em">App Store のリンクは公開後にここに載せます。</p>
+  <footer>© 2026 JL1LCQ · Data: NOAA SWPC. SoraGauge JP is not affiliated with or endorsed by NOAA.</footer>
+</div>
+</body>
+</html>

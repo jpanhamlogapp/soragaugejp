@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SoraGauge JP 取扱説明書 / User Guide</title>
+<style>
+  :root{--bg:#ffffff;--fg:#1b1f24;--muted:#5b6570;--line:#e5e8ec;--accent:#0062cc;--card:#f6f8f9;--sun:#c2410c}
+  @media (prefers-color-scheme: dark){:root{--bg:#111418;--fg:#e8ebee;--muted:#9aa4ae;--line:#2a3038;--accent:#64b5ff;--card:#1a1f26;--sun:#ffb454}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Segoe UI",Roboto,sans-serif;line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 22px 80px}
+  header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:12px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .dot{width:34px;height:34px;border-radius:8px;flex:0 0 auto;background:linear-gradient(135deg,#f6b73c,#c2410c)}
+  h1{font-size:1.35rem;margin:0} .sub{color:var(--muted);font-size:.9rem;margin-top:2px}
+  h2{font-size:1.1rem;margin:2.2em 0 .4em;color:var(--accent)} h3{font-size:1rem;margin:1.6em 0 .3em}
+  .lang{color:var(--muted);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-top:2.6em}
+  p{margin:.5em 0} ul,ol{margin:.4em 0 .8em;padding-left:1.2em} li{margin:.25em 0} a{color:var(--accent)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:1em 0}
+  table{border-collapse:collapse;width:100%;font-size:.92rem} th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top} th{color:var(--muted);font-weight:600}
+  .tbl{overflow-x:auto}
+  .badge{display:inline-block;min-width:2.2em;text-align:center;border-radius:999px;padding:0 .5em;font-weight:700;font-size:.85em}
+  .b0{background:#c9ccd1;color:#1b1f24}.b1{background:#ffcc33;color:#1b1f24}.b2{background:#ff9400;color:#1b1f24}.b3{background:#e64033;color:#fff}.b4{background:#991a33;color:#fff}
+  .toc{columns:2;font-size:.92rem} @media (max-width:560px){.toc{columns:1}}
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+  code{background:var(--card);padding:.1em .35em;border-radius:5px;font-size:.9em}
+  nav a{margin-right:14px}
+  details{margin:.4em 0} summary{cursor:pointer;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><div class="dot"></div>
+      <div><h1>SoraGauge JP</h1><div class="sub">取扱説明書 / User Guide · バージョン 1.0</div></div>
+    </div>
+    <nav style="margin-top:12px;font-size:.9rem"><a href="support.html">取扱説明書</a><a href="credits.html">出典・クレジット</a><a href="privacy.html">プライバシー</a></nav>
+  </header>
+  <p class="sub">最終更新 / Last updated: 2026-11-09 · 対応: iPhone / iPad(iOS 26 以降)・Mac(macOS 26 以降)</p>
+
+  <div class="lang">日本語</div>
+
+  <div class="card">
+    <p><strong>SoraGauge JP(ソラゲージ JP)</strong>は、NOAA SWPC(米国海洋大気庁 宇宙天気予報センター)の宇宙天気を、ひと目で分かる形で表示する無料のアプリです。太陽フレア(X線)・地磁気(Kp)・太陽風・黒点・警報と、アマチュア無線の HF 運用への影響の目安を見られます。広告・課金・アカウントはありません。</p>
+  </div>
+
+  <h2>目次</h2>
+  <ol class="toc">
+    <li><a href="#s1">画面の構成</a></li>
+    <li><a href="#s2">ダッシュボード</a></li>
+    <li><a href="#s3">NOAA スケール(R / S / G)の読み方</a></li>
+    <li><a href="#s4">太陽活動</a></li>
+    <li><a href="#s5">地磁気・太陽風</a></li>
+    <li><a href="#s6">HF運用(SoraGauge JP の目安)</a></li>
+    <li><a href="#s7">履歴・設定</a></li>
+    <li><a href="#s8">データの更新と通信</a></li>
+    <li><a href="#s9">HamLogJP との連携</a></li>
+    <li><a href="#s10">用語</a></li>
+    <li><a href="#s11">よくある質問</a></li>
+    <li><a href="#s12">サポート</a></li>
+  </ol>
+
+  <h2 id="s1">1. 画面の構成</h2>
+  <p>iPhone では画面の下のタブ、iPad と Mac では左のサイドバーで 5 つの画面を切り替えます。右上の「更新」ボタン(Mac では ⌘R)で、NOAA から最新のデータを取り直します。</p>
+  <div class="tbl"><table>
+    <tr><th>画面</th><th>内容</th></tr>
+    <tr><td>ダッシュボード</td><td>いまの状況の要約。NOAA スケール・主な観測値・きょうの太陽面・HF への注意</td></tr>
+    <tr><td>太陽活動</td><td>X線フラックスのグラフ、フレアの一覧、発生確率、黒点群、黒点数の推移、太陽周期</td></tr>
+    <tr><td>地磁気・太陽風</td><td>Kp 指数(7日)と 3日予報、太陽風(速度・密度・Bz・Bt)、警報・注意報、NOAA 3日予報の原文</td></tr>
+    <tr><td>HF運用</td><td>周波数帯ごとの目安(SoraGauge JP 独自)と、その根拠になった観測値</td></tr>
+    <tr><td>履歴・設定</td><td>項目ごとの取得状態、設定、データの出どころ、取扱説明書・プライバシーポリシーへのリンク</td></tr>
+  </table></div>
+
+  <h2 id="s2">2. ダッシュボード</h2>
+  <ul>
+    <li><strong>いちばん上の帯</strong>: いまの状況を 1 行で示します(「静穏」、「M1.1 フレア進行中 · R1」など)。右に最新の観測日時を UTC と JST で表示します。</li>
+    <li><strong>NOAA スケール(公式)</strong>: R(電波障害)・S(放射線)・G(磁気嵐)の現在の段階と、翌日の確率・予報。</li>
+    <li><strong>いまの観測値</strong>: X線フラックス、Kp 指数、太陽風、黒点数のカード。タップすると詳しい画面へ移ります。小さなグラフは直近の推移です。</li>
+    <li><strong>きょうの太陽面</strong>: NOAA の黒点群の報告から描いた図です(写真ではありません)。大きな黒点群ほど大きな点で、磁場に δ(デルタ)を含む群は輪で囲み「Δ」を付けます。</li>
+    <li><strong>HF への注意</strong>: 観測値から見た HF 運用への影響の要約。「SoraGauge JP の目安」と書かれているものは本アプリ独自の解釈です(6 章)。</li>
+  </ul>
+
+  <h2 id="s3">3. NOAA スケール(R / S / G)の読み方</h2>
+  <p>NOAA が定める宇宙天気の公式な段階です。0(なし)〜5(極端)。本アプリは色だけでなく文字(R1 など)で示します。</p>
+  <div class="tbl"><table>
+    <tr><th>段階</th><th>R 電波障害(X線フレア)</th><th>S 放射線(高エネルギー粒子)</th><th>G 磁気嵐(Kp)</th></tr>
+    <tr><td><span class="badge b0">0</span></td><td>なし</td><td>なし</td><td>なし(Kp 0〜4)</td></tr>
+    <tr><td><span class="badge b1">1</span></td><td>小(M1): 昼側の HF が弱く乱れる</td><td>小: 極域で HF がわずかに劣化</td><td>小(Kp 5): 高緯度でオーロラ・弱い乱れ</td></tr>
+    <tr><td><span class="badge b2">2</span></td><td>中(M5): 昼側の HF が数十分途切れる</td><td>中: 極域で HF が劣化</td><td>中(Kp 6): 高緯度の HF が弱まる</td></tr>
+    <tr><td><span class="badge b3">3</span></td><td>強(X1): 昼側の HF が約 1 時間途切れる</td><td>強: 極域で HF が劣化</td><td>強(Kp 7): HF が断続的に乱れる</td></tr>
+    <tr><td><span class="badge b4">4〜5</span></td><td>激〜極(X10 / X20): 昼側の HF が数時間途切れる</td><td>激〜極: 極域で HF が途切れる</td><td>激〜極(Kp 8〜9): 広い範囲で HF が 1〜2 日使えない</td></tr>
+  </table></div>
+  <p class="sub">詳しくは NOAA の <a href="https://www.swpc.noaa.gov/noaa-scales-explanation">NOAA Space Weather Scales</a> をご覧ください。</p>
+
+  <h2 id="s4">4. 太陽活動</h2>
+  <ul>
+    <li><strong>X線フラックス(6 時間)</strong>: GOES 衛星の 0.1–0.8 nm の X 線。対数の目盛りで、横線が B・C・M・X クラスの境です。M 以上が R1、X 以上が R3 に当たります。</li>
+    <li><strong>フレア(7 日)</strong>: C クラス以上のフレアを新しい順に。最大のクラスと時刻、R スケールの対応を表示します。進行中のフレアは上に示します。</li>
+    <li><strong>フレアの発生確率</strong>: NOAA の予報。今日・明日・明後日に C / M / X クラスが起きる確率と、10 MeV プロトンの確率。</li>
+    <li><strong>黒点群(活動領域)</strong>: 太陽面の図と一覧。位置は「S06W07 = 南緯 6°・中央子午線から西へ 7°」のように読みます。黒点群は東(E)から現れて西(W)へ回ります。McIntosh 分類(例 Dkc)の D・E・F は大きな群、磁場分類の γ(ガンマ)・δ(デルタ)を含む群はフレアを起こしやすいとされます。C/M/X % はその群の 24 時間のフレア確率(NOAA)。</li>
+    <li><strong>黒点数(NOAA・日別)</strong>: 30 日・90 日・1 年の推移。当日の値は速報で後で直されることがあります。<strong>国際黒点数(SILSO)とは数え方が違い、数値も異なります。</strong></li>
+    <li><strong>太陽周期</strong>: 月平均の黒点数(観測・13 か月平滑)と NOAA の予測(幅つき)。</li>
+  </ul>
+
+  <h2 id="s5">5. 地磁気・太陽風</h2>
+  <ul>
+    <li><strong>Kp 指数(3 時間値・7 日)</strong>: 地磁気の乱れの指数(0〜9)。Kp 5 以上は G1 以上として色を変え、右の目盛りにも G を併記します。1 分ごとの推定値も表示します。</li>
+    <li><strong>Kp 3 日予報</strong>: NOAA の 3 時間ごとの予報。</li>
+    <li><strong>太陽風(直近 1 時間)</strong>: 速度(km/s)・密度・磁場の Bz と Bt(nT)。Bz が負(南向き)で大きいほど、また速度が速いほど地磁気が乱れやすくなります。</li>
+    <li><strong>警報・注意報・見込み</strong>: NOAA の Alert / Warning / Watch を新しい順に。タップすると原文(英語)を読めます。</li>
+    <li><strong>NOAA 3 日予報(原文)</strong>: Kp の予報の表と、その理由(英語)。</li>
+  </ul>
+
+  <h2 id="s6">6. HF運用(SoraGauge JP の目安)</h2>
+  <div class="card">
+    <p><strong>この画面の「良・可・注意・不良・閉」は、NOAA の公式な予報ではありません。</strong>NOAA の観測値(R・G スケール、3 日先までの予報の最大 G、黒点数)をもとに、SoraGauge JP が一般的な伝搬の傾向をまとめた目安です。実際にバンドが開いているかは、受信して確かめてください。</p>
+  </div>
+  <ul>
+    <li>各周波数帯について「昼」「夜」の目安と、<strong>観測値から言えること</strong>(例: R1 で昼側の吸収が増える)と、<strong>一般的な影響</strong>(例: 夜間が主体の帯)を分けて書いています。</li>
+    <li>R(フレア)の影響は昼側だけ、G(磁気嵐)の影響は高緯度を通るパスから、黒点数が高いほど 21〜28 MHz が日中に開きやすい、という考え方です。</li>
+    <li>50 MHz は Es(スポラディック E)などが主な要因のため、目安を出しません。</li>
+    <li>F10.7(太陽電波フラックス)は観測元の利用条件を確認中のため、この版では使っていません。</li>
+  </ul>
+
+  <h2 id="s7">7. 履歴・設定</h2>
+  <ul>
+    <li><strong>取得の状態</strong>: 項目ごとの最終取得と更新間隔。取得に失敗した項目はここに理由が出ます。「保存したデータを消して取り直す」で端末内のキャッシュを消します(本アプリのデータだけ。ほかのアプリには触れません)。</li>
+    <li><strong>表示</strong>: 時刻の表示(UTC / JST / 両方)、前面にある間の自動更新(5 分ごと)、HF への注意の表示。</li>
+    <li><strong>HamLogJP との連携</strong>: HamLogJP を開くボタンと App Store へのリンク(9 章)。</li>
+    <li><strong>データの出どころ・利用条件</strong>: 各データの原生成機関とクレジット(<a href="credits.html">出典・クレジット</a>)。</li>
+  </ul>
+
+  <h2 id="s8">8. データの更新と通信</h2>
+  <ul>
+    <li>通信先は NOAA SWPC(<code>services.swpc.noaa.gov</code>)だけです。HTTPS で取得します。</li>
+    <li>項目ごとに更新間隔を決めています(X線・Kp 推定・太陽風は 5 分、警報・スケールは 10 分、黒点群・確率は 6 時間、月平均は 24 時間など)。期限内は再取得せず、通信量と電池の消費を抑えます。「更新」ボタンはすべてを取り直します。</li>
+    <li>オフラインのときは前回のデータを表示し、取得できなかった項目をお知らせします。古いデータには「(古いデータ)」と付きます。</li>
+    <li>表示する時刻は観測・発表の時刻です(端末の時計ではありません)。</li>
+  </ul>
+
+  <h2 id="s9">9. HamLogJP との連携</h2>
+  <p>交信ログアプリ <strong>HamLogJP</strong> から SoraGauge JP を開けます(HamLogJP 側の対応版が必要です)。開くときに渡される情報は「どの画面を開くか」だけで、SoraGauge JP から HamLogJP へデータを送ることはありません。URL スキーム: <code>soragaugejp://open</code>, <code>soragaugejp://hf</code>, <code>soragaugejp://solar</code>, <code>soragaugejp://geo</code>, <code>soragaugejp://settings</code>。</p>
+
+  <h2 id="s10">10. 用語</h2>
+  <div class="tbl"><table>
+    <tr><th>用語</th><th>意味</th></tr>
+    <tr><td>X線フラックス</td><td>GOES 衛星が測る太陽の X 線の強さ(W/m²)。A &lt; B &lt; C &lt; M &lt; X の順に 10 倍ずつ強い。</td></tr>
+    <tr><td>デリンジャー現象</td><td>フレアの X 線で昼側の電離層 D 層が厚くなり、低い周波数ほど吸収されて HF が弱くなる現象。</td></tr>
+    <tr><td>Kp 指数</td><td>世界の観測所から求めた地磁気の乱れの指数(0〜9、3 時間ごと)。</td></tr>
+    <tr><td>Bz</td><td>太陽風の磁場の南北成分(nT)。負(南向き)のとき地球の磁場と結びつきやすく、磁気嵐の原因になる。</td></tr>
+    <tr><td>黒点数(NOAA)</td><td>NOAA SWPC の数え方による黒点相対数。国際黒点数(SILSO)とは異なる。</td></tr>
+    <tr><td>McIntosh 分類</td><td>黒点群の形の分類(例 Dkc)。1 文字目が群の大きさ・形、2 文字目が最大黒点の半暗部、3 文字目が黒点の密集度。</td></tr>
+    <tr><td>磁場分類</td><td>α(単極)・β(双極)・γ(複雑)・δ(同じ半暗部に逆極性)。δ を含む群は大きなフレアを起こしやすい。</td></tr>
+    <tr><td>UTC / JST</td><td>協定世界時 / 日本標準時(UTC + 9 時間)。宇宙天気のデータは UTC で発表されます。</td></tr>
+  </table></div>
+
+  <h2 id="s11">11. よくある質問</h2>
+  <details><summary>黒点数がほかのサイトと違います</summary><p>本アプリは NOAA SWPC の数え方の値を使っています。国際黒点数(SILSO)とは数え方が違うため、数値は一致しません。</p></details>
+  <details><summary>「古いデータ」と出ます</summary><p>通信ができないか、NOAA 側の更新が止まっているときに出ます。「更新」を押すか、しばらくしてからお試しください。</p></details>
+  <details><summary>HF運用の目安は信頼できますか</summary><p>NOAA の観測値にもとづく一般的な傾向の目安で、公式な予報ではありません。実際の伝搬は季節・時刻・経路・アンテナなどで大きく変わります。</p></details>
+  <details><summary>通知やウィジェットはありますか</summary><p>この版にはありません。今後の版で検討します。</p></details>
+  <details><summary>データは NOAA の公式なものですか</summary><p>NOAA SWPC が公開するデータをそのまま表示しています(速報値は暫定)。ただし本アプリは NOAA から承認・保証を受けたものではありません。</p></details>
+
+  <h2 id="s12">12. サポート</h2>
+  <p>ご意見・不具合のご連絡: genre_pincers_3d@icloud.com<br>プライバシーポリシー: <a href="privacy.html">privacy.html</a> · 出典・クレジット: <a href="credits.html">credits.html</a></p>
+
+  <div class="lang">English</div>
+  <p><strong>SoraGauge JP</strong> is a free app that shows space weather from NOAA SWPC at a glance: solar X-ray flux and flares, geomagnetic Kp index, solar wind, sunspot regions and numbers, alerts, and HF propagation hints for amateur radio. No ads, no purchases, no account.</p>
+  <ul>
+    <li><strong>Dashboard</strong>: one-line status, NOAA R/S/G scales, key observations, today's solar disk (drawn from NOAA's Solar Region Summary), HF advisory.</li>
+    <li><strong>Solar Activity</strong>: GOES X-ray flux (6 h, log scale), flare list (7 days), flare probabilities, active regions with McIntosh and magnetic classes, NOAA daily sunspot numbers (30/90/365 days), solar cycle progression and prediction.</li>
+    <li><strong>Geomagnetic &amp; Solar Wind</strong>: Kp (7 days) and 3-day forecast, solar wind speed/density/Bz/Bt, NOAA alerts/warnings/watches (original text), 3-day forecast text.</li>
+    <li><strong>HF Operations</strong>: band-by-band hints (day/night) derived by SoraGauge JP from NOAA observations. <strong>These are our own interpretation, not official NOAA forecasts.</strong></li>
+    <li><strong>History &amp; Settings</strong>: per-item fetch status, UTC/JST display, auto-refresh, data sources and credits, links to this guide and the privacy policy.</li>
+  </ul>
+  <p>The app connects only to <code>services.swpc.noaa.gov</code> over HTTPS. Sunspot numbers are NOAA SWPC counts, not the International Sunspot Number (SILSO). HamLogJP can open the app via <code>soragaugejp://</code>; no data is sent back. Support: genre_pincers_3d@icloud.com</p>
+
+  <footer>© 2026 JL1LCQ · SoraGauge JP · Data: NOAA SWPC(本アプリは NOAA から承認・保証を受けたものではありません)</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SoraGauge JP 出典・クレジット / Data Sources &amp; Credits</title>
+<style>
+  :root{--bg:#ffffff;--fg:#1b1f24;--muted:#5b6570;--line:#e5e8ec;--accent:#0062cc;--card:#f6f8f9}
+  @media (prefers-color-scheme: dark){:root{--bg:#111418;--fg:#e8ebee;--muted:#9aa4ae;--line:#2a3038;--accent:#64b5ff;--card:#1a1f26}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Segoe UI",Roboto,sans-serif;line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 22px 80px}
+  header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:12px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .dot{width:34px;height:34px;border-radius:8px;flex:0 0 auto;background:linear-gradient(135deg,#f6b73c,#c2410c)}
+  h1{font-size:1.35rem;margin:0} .sub{color:var(--muted);font-size:.9rem;margin-top:2px}
+  h2{font-size:1.05rem;margin:2.2em 0 .4em;color:var(--accent)}
+  .lang{color:var(--muted);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-top:2.6em}
+  p{margin:.5em 0} ul{margin:.4em 0 .8em;padding-left:1.2em} li{margin:.25em 0} a{color:var(--accent)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:1em 0}
+  table{border-collapse:collapse;width:100%;font-size:.92rem} th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top} th{color:var(--muted);font-weight:600}
+  .tbl{overflow-x:auto}
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+  code{background:var(--card);padding:.1em .35em;border-radius:5px;font-size:.9em}
+  nav a{margin-right:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><div class="dot"></div>
+      <div><h1>SoraGauge JP</h1><div class="sub">出典・クレジット / Data Sources &amp; Credits</div></div>
+    </div>
+    <nav style="margin-top:12px;font-size:.9rem"><a href="support.html">取扱説明書</a><a href="credits.html">出典・クレジット</a><a href="privacy.html">プライバシー</a></nav>
+  </header>
+  <p class="sub">最終更新 / Last updated: 2026-11-09</p>
+
+  <div class="lang">日本語</div>
+  <div class="card">
+    <p><strong>Space weather data: NOAA Space Weather Prediction Center (SWPC), Boulder, CO, National Oceanic and Atmospheric Administration (NOAA), U.S. Department of Commerce.</strong></p>
+    <p>SoraGauge JP は NOAA から承認・保証を受けたアプリではありません。NOAA が公開するデータを、内容を変えずに表示しています。速報値は後で訂正されることがあります。</p>
+  </div>
+
+  <h2>データの一覧</h2>
+  <div class="tbl"><table>
+    <tr><th>表示する内容</th><th>原生成機関・観測</th><th>NOAA SWPC の提供元(URL)</th></tr>
+    <tr><td>NOAA スケール(R / S / G)の現在値と予報</td><td>NOAA SWPC</td><td><code>products/noaa-scales.json</code></td></tr>
+    <tr><td>X線フラックス・フレア(最新・7日)</td><td>NOAA GOES-18 衛星(XRS)</td><td><code>json/goes/primary/xrays-6-hour.json</code>, <code>xray-flares-latest.json</code>, <code>xray-flares-7-day.json</code></td></tr>
+    <tr><td>フレアの発生確率(1〜3日)</td><td>NOAA SWPC(予報)</td><td><code>json/solar_probabilities.json</code></td></tr>
+    <tr><td>Kp 指数(3時間値・1分推定)・Kp 3日予報</td><td>NOAA SWPC(推定惑星 K 指数)</td><td><code>products/noaa-planetary-k-index.json</code>, <code>json/planetary_k_index_1m.json</code>, <code>products/noaa-planetary-k-index-forecast.json</code></td></tr>
+    <tr><td>太陽風(速度・密度・Bz・Bt)</td><td>DSCOVR / ACE 衛星(NOAA・NASA)を NOAA が地球の位置へ伝搬</td><td><code>products/geospace/propagated-solar-wind-1-hour.json</code></td></tr>
+    <tr><td>警報・注意報・見込み</td><td>NOAA SWPC</td><td><code>products/alerts.json</code></td></tr>
+    <tr><td>黒点群(活動領域: 番号・位置・面積・McIntosh 分類・磁場分類・フレア確率)</td><td>NOAA SWPC / 米空軍(SWO)の Solar Region Summary</td><td><code>json/solar_regions.json</code></td></tr>
+    <tr><td>黒点数(日別・月平均)・太陽周期の予測</td><td>NOAA SWPC(SWO の数え方)</td><td><code>json/solar-cycle/swpc_observed_ssn.json</code>, <code>observed-solar-cycle-indices.json</code>, <code>predicted-solar-cycle.json</code></td></tr>
+    <tr><td>3日予報(原文)</td><td>NOAA SWPC</td><td><code>text/3-day-forecast.txt</code></td></tr>
+  </table></div>
+  <p class="sub">すべて <code>https://services.swpc.noaa.gov/</code> の下にあります。NOAA の情報は米国政府の著作物としてパブリックドメインで公開されています(<a href="https://www.swpc.noaa.gov/content/disclaimer">NOAA SWPC Disclaimer</a>)。</p>
+
+  <h2>使っていないデータ</h2>
+  <ul>
+    <li><strong>国際黒点数(SILSO, Royal Observatory of Belgium)</strong>: 利用条件(CC BY-NC 4.0)の都合により使っていません。本アプリの黒点数は NOAA SWPC の数え方の値で、国際黒点数とは数値が異なります。</li>
+    <li><strong>F10.7 太陽電波フラックス</strong>: 観測元(カナダ国立研究機構 NRC)の利用条件を確認中のため、現在の版では表示していません。</li>
+    <li>太陽の写真(SDO / SUVI など)は使っていません。本アプリの太陽面の図は、NOAA の黒点群の報告から SoraGauge JP が描いたものです。</li>
+  </ul>
+
+  <h2>「SoraGauge JP の目安」について</h2>
+  <p>HF運用の画面などにある「良・可・注意・不良・閉」や「HF への注意」の文章は、NOAA の観測値と公式スケールをもとに SoraGauge JP が独自にまとめた目安で、NOAA の公式な予報・判定ではありません。</p>
+
+  <h2>ソフトウェア</h2>
+  <ul>
+    <li>Apple SwiftUI / Swift Charts(Apple Inc.)</li>
+    <li>サードパーティのライブラリは使っていません。</li>
+  </ul>
+
+  <div class="lang">English</div>
+  <p>Space weather data courtesy of NOAA Space Weather Prediction Center (SWPC), Boulder, CO, U.S. Dept. of Commerce. GOES X-ray data: NOAA GOES-18. Solar wind: DSCOVR/ACE (NOAA/NASA). Solar Region Summary: NOAA SWPC / USAF. Sunspot numbers are NOAA SWPC's own counts (not the International Sunspot Number from SILSO). SoraGauge JP is not affiliated with or endorsed by NOAA. Information from NOAA is in the public domain; real-time values are preliminary and subject to revision. The "SoraGauge JP advisory" (band-by-band HF hints) is our own interpretation, not an official NOAA forecast.</p>
+
+  <footer>© 2026 JL1LCQ · SoraGauge JP</footer>
+</div>
+</body>
+</html>
