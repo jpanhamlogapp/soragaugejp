@@ -25,6 +25,14 @@
   footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
   code{background:var(--card);padding:.1em .35em;border-radius:5px;font-size:.9em}
   nav a{margin-right:14px}
+  .shot{margin:1em 0}
+  .shot img{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+  .shot.phone img{width:260px}
+  .shot figcaption{color:var(--muted);font-size:.86rem;margin-top:.4em}
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:1em 0}
+  .shots figure{margin:0} .shots img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
+  .shots figcaption{color:var(--muted);font-size:.8rem;margin-top:.3em;text-align:center}
+  @media (max-width:560px){.shots{grid-template-columns:repeat(2,1fr)}}
   details{margin:.4em 0} summary{cursor:pointer;font-weight:600}
 </style>
 </head>
@@ -61,6 +69,7 @@
   </ol>
 
   <h2 id="s1">1. 画面の構成</h2>
+  <figure class="shot"><img src="images/v10_mac_dashboard.jpg" width="1180" height="760" loading="lazy" alt="Mac のダッシュボード"><figcaption>Mac の画面(左のサイドバーで切り替えます。バージョン 1.0)</figcaption></figure>
   <p>iPhone では画面の下のタブ、iPad と Mac では左のサイドバーで 5 つの画面を切り替えます。右上の「更新」ボタン(Mac では ⌘R)で、NOAA から最新のデータを取り直します。</p>
   <div class="tbl"><table>
     <tr><th>画面</th><th>内容</th></tr>
@@ -72,6 +81,7 @@
   </table></div>
 
   <h2 id="s2">2. ダッシュボード</h2>
+  <figure class="shot phone"><img src="images/v10_iphone_dashboard.jpg" width="603" height="1311" loading="lazy" alt="ダッシュボード"><figcaption>ダッシュボード(iPhone・バージョン 1.0)</figcaption></figure>
   <ul>
     <li><strong>いちばん上の帯</strong>: いまの状況を 1 行で示します(「静穏」、「M1.1 フレア進行中 · R1」など)。右に最新の観測日時を UTC と JST で表示します。</li>
     <li><strong>NOAA スケール(公式)</strong>: R(電波障害)・S(放射線)・G(磁気嵐)の現在の段階と、翌日の確率・予報。</li>
@@ -93,6 +103,7 @@
   <p class="sub">詳しくは NOAA の <a href="https://www.swpc.noaa.gov/noaa-scales-explanation">NOAA Space Weather Scales</a> をご覧ください。</p>
 
   <h2 id="s4">4. 太陽活動</h2>
+  <figure class="shot phone"><img src="images/v10_iphone_solar.jpg" width="603" height="1311" loading="lazy" alt="太陽活動"><figcaption>太陽活動(iPhone・バージョン 1.0)</figcaption></figure>
   <ul>
     <li><strong>X線フラックス(6 時間)</strong>: GOES 衛星の 0.1–0.8 nm の X 線。対数の目盛りで、横線が B・C・M・X クラスの境です。M 以上が R1、X 以上が R3 に当たります。</li>
     <li><strong>フレア(7 日)</strong>: C クラス以上のフレアを新しい順に。最大のクラスと時刻、R スケールの対応を表示します。進行中のフレアは上に示します。</li>
@@ -103,6 +114,7 @@
   </ul>
 
   <h2 id="s5">5. 地磁気・太陽風</h2>
+  <figure class="shot phone"><img src="images/v10_iphone_geomagnetic.jpg" width="603" height="1311" loading="lazy" alt="地磁気・太陽風"><figcaption>地磁気・太陽風(iPhone・バージョン 1.0)</figcaption></figure>
   <ul>
     <li><strong>Kp 指数(3 時間値・7 日)</strong>: 地磁気の乱れの指数(0〜9)。Kp 5 以上は G1 以上として色を変え、右の目盛りにも G を併記します。1 分ごとの推定値も表示します。</li>
     <li><strong>Kp 3 日予報</strong>: NOAA の 3 時間ごとの予報。</li>
@@ -112,6 +124,7 @@
   </ul>
 
   <h2 id="s6">6. HF運用(SoraGauge JP の目安)</h2>
+  <figure class="shot phone"><img src="images/v10_iphone_hf.jpg" width="603" height="1311" loading="lazy" alt="HF運用"><figcaption>HF運用(iPhone・バージョン 1.0)</figcaption></figure>
   <div class="card">
     <p><strong>この画面の「良・可・注意・不良・閉」は、NOAA の公式な予報ではありません。</strong>NOAA の観測値(R・G スケール、3 日先までの予報の最大 G、黒点数)をもとに、SoraGauge JP が一般的な伝搬の傾向をまとめた目安です。実際にバンドが開いているかは、受信して確かめてください。</p>
   </div>
@@ -123,6 +136,7 @@
   </ul>
 
   <h2 id="s7">7. 履歴・設定</h2>
+  <figure class="shot phone"><img src="images/v10_iphone_history.jpg" width="603" height="1311" loading="lazy" alt="履歴・設定"><figcaption>履歴・設定(iPhone・バージョン 1.0)</figcaption></figure>
   <ul>
     <li><strong>取得の状態</strong>: 項目ごとの最終取得と更新間隔。取得に失敗した項目はここに理由が出ます。「保存したデータを消して取り直す」で端末内のキャッシュを消します(本アプリのデータだけ。ほかのアプリには触れません)。</li>
     <li><strong>表示</strong>: 時刻の表示(UTC / JST / 両方)、前面にある間の自動更新(5 分ごと)、HF への注意の表示。</li>
@@ -139,6 +153,7 @@
   </ul>
 
   <h2 id="s9">9. HamLogJP との連携</h2>
+  <figure class="shot phone"><img src="images/v10_iphone_classic.jpg" width="603" height="1311" loading="lazy" alt="「宇宙天気(簡易)」(HamLogJP と同じ表示)"><figcaption>「宇宙天気(簡易)」(HamLogJP と同じ表示)(iPhone・バージョン 1.0)</figcaption></figure>
   <p>交信ログアプリ <strong>HamLogJP</strong> から SoraGauge JP を開けます(HamLogJP 側の対応版が必要です)。開くときに渡される情報は「どの画面を開くか」だけで、SoraGauge JP から HamLogJP へデータを送ることはありません。URL スキーム: <code>soragaugejp://open</code>, <code>soragaugejp://hf</code>, <code>soragaugejp://solar</code>, <code>soragaugejp://geo</code>, <code>soragaugejp://settings</code>。</p>
 
   <h2 id="s10">10. 用語</h2>
@@ -174,6 +189,16 @@
     <li><strong>History &amp; Settings</strong>: per-item fetch status, UTC/JST display, auto-refresh, data sources and credits, links to this guide and the privacy policy.</li>
   </ul>
   <p>The app connects only to <code>services.swpc.noaa.gov</code> over HTTPS. Sunspot numbers are NOAA SWPC counts, not the International Sunspot Number (SILSO). HamLogJP can open the app via <code>soragaugejp://</code>; no data is sent back. Support: genre_pincers_3d@icloud.com</p>
+
+  <p><strong>Screens</strong> (version 1.0, iPhone, shown in Japanese)</p>
+  <div class="shots">
+    <figure><img src="images/v10_iphone_dashboard.jpg" width="603" height="1311" loading="lazy" alt="Dashboard"><figcaption>Dashboard</figcaption></figure>
+    <figure><img src="images/v10_iphone_solar.jpg" width="603" height="1311" loading="lazy" alt="Solar Activity"><figcaption>Solar Activity</figcaption></figure>
+    <figure><img src="images/v10_iphone_geomagnetic.jpg" width="603" height="1311" loading="lazy" alt="Geomagnetic &amp; Solar Wind"><figcaption>Geomagnetic &amp; Solar Wind</figcaption></figure>
+    <figure><img src="images/v10_iphone_hf.jpg" width="603" height="1311" loading="lazy" alt="HF Operations"><figcaption>HF Operations</figcaption></figure>
+    <figure><img src="images/v10_iphone_history.jpg" width="603" height="1311" loading="lazy" alt="History &amp; Settings"><figcaption>History &amp; Settings</figcaption></figure>
+    <figure><img src="images/v10_iphone_classic.jpg" width="603" height="1311" loading="lazy" alt="Space Weather (Simple)"><figcaption>Space Weather (Simple)</figcaption></figure>
+  </div>
 
   <footer>© 2026 JL1LCQ · SoraGauge JP · Data: NOAA SWPC(本アプリは NOAA から承認・保証を受けたものではありません)</footer>
 </div>
